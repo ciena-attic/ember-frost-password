@@ -1,21 +1,21 @@
-import Ember from "ember"
+import Ember from 'ember'
 
 export default Ember.Controller.extend({
   errored: true,
 
   actions: {
-    text(attrs) {
+    text (attrs) {
       this.notifications.addNotification({
         message: "value: '" + attrs.value + "'",
-        type: "success",
+        type: 'success',
         autoClear: true,
         clearDuration: 2000
-      });
+      })
     },
 
-    toggleError() {
+    toggleError () {
       this.toggleProperty('error')
       this.toggleProperty('errored')
     }
   }
-});
+})
