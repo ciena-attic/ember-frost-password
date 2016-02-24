@@ -1,13 +1,13 @@
-[ci-img]: https://img.shields.io/travis/ciena-frost/ember-frost-password.svg "Travis CI Build Status"
+[ci-img]: https://travis-ci.org/ciena-frost/ember-frost-password.svg "Build Status"
 [ci-url]: https://travis-ci.org/ciena-frost/ember-frost-password
 
-[cov-img]: https://img.shields.io/coveralls/ciena-frost/ember-frost-password.svg "Coveralls Code Coverage"
+[cov-img]: https://coveralls.io/repos/github/ciena-frost/ember-frost-password/badge.svg?branch=master "Code Coverage"
 [cov-url]: https://coveralls.io/github/ciena-frost/ember-frost-password
 
 [npm-img]: https://img.shields.io/npm/v/ember-frost-password.svg "NPM Version"
 [npm-url]: https://www.npmjs.com/package/ember-frost-password
 
-[![Travis][ci-img]][ci-url] [![Coveralls][cov-img]][cov-url] [![NPM][npm-img]][npm-url]
+# ember-frost-password <br /> [![Travis][ci-img]][ci-url] [![Coveralls][cov-img]][cov-url] [![NPM][npm-img]][npm-url]
 
 # ember-frost-password
 the drop-down select widget to rule them all
