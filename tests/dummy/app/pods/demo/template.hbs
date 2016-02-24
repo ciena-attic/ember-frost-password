@@ -1,2 +1,32 @@
-frost-password testbed
-{{frost-password}}
+<div class='dummy-header'>Basic</div>
+
+<div style="padding: 10px 20px;">
+  {{frost-password id="basic"}}
+</div>
+
+<div class='dummy-header'>Action</div>
+
+<div style="padding: 10px 20px;">
+  {{frost-password id="action" on-input=(action "text")}}
+</div>
+
+<div class='dummy-header'>Errored</div>
+
+<div style="padding: 10px 20px;">
+  {{frost-password id="errored" classNameBindings="errored"}}
+  {{#frost-button on-click=(action "toggleError") class="text small secondary"}}
+      Toggle error
+  {{/frost-button}}
+</div>
+
+<div class='dummy-header'>Attributes - e.g. Disabled</div>
+
+<div style="padding: 10px 20px;">
+  {{frost-password id="disabled" disabled=true}}
+</div>
+
+<div class='dummy-header'>Revealable</div>
+
+<div style="padding: 10px 20px;">
+  {{frost-password id="revealable" value='x' revealable=true}}
+</div>

@@ -1,1 +1,11 @@
+@import 'node_modules/ember-frost-css-core/scss/frost-core';
 @import 'node_modules/ember-frost-theme/scss/frost-theme';
+
+.frost-password {
+  display: inline-block;
+  .revealer {
+    display: inline-block;
+    cursor: pointer;
+    color: $frost-color-blue-1;
+  }
+}
