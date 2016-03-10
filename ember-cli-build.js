@@ -11,7 +11,7 @@ module.exports = function (defaults) {
     },
     sassOptions: {
       includePaths: [
-        'node_modules/ember-frost-css-core/scss',
+        'node_modules/ember-frost-css-core/scss/frost-core',
         'node_modules/ember-frost-theme/scss'
       ]
     }
