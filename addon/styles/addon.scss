@@ -4,9 +4,18 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  .revealer {
-    cursor: pointer;
-    color: $frost-color-blue-1;
+
+  &.revealable {
+    .frost-text .close {
+      left: -40px;
+    }
+
+    .frost-button {
+      margin-left: -30px;
+      width: 15px;
+      height: 15px;
+      padding: 0;
+    }
   }
 
   .row {
@@ -15,16 +24,16 @@
     align-items: center;
   }
 
-  .warning{
+  .warning {
     font-size: 10px;
     color: $frost-color-blue-1;
-
-    &.showWarning {
-      display: block;
-    }
-
-    &.hideWarning {
-      display: none;
-    }
   }
+
+  .shifted-warning {
+    font-size: 10px;
+    color: $frost-color-blue-1;
+    margin-left: 15px;
+  }
+
+
 }

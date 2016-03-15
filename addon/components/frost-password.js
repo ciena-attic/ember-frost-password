@@ -5,24 +5,16 @@ import _ from 'lodash'
 export default Ember.Component.extend({
   layout: layout,
   classNames: ['frost-password'],
+  classNameBindings: ['revealable'],
   isCapsOn: false,
-  showRevealer: false,
+  isRevealerVisible: false,
   revealable: false,
   revealed: false,
+  revealIcon: 'frost/show',
   type: 'password',
-  wasCapsOn: false,
 
   focusOut: Ember.on('focusOut', function () {
-    if (this.get('isCapsOn')) {
-      this.set('wasCapsOn', true)
-    }
     this.set('isCapsOn', false)
-  }),
-  focusIn: Ember.on('focusIn', function () {
-    if (this.get('wasCapsOn')) {
-      this.set('isCapsOn', true)
-      this.set('wasCapsOn', false)
-    }
   }),
   keyDown: Ember.on('keyDown', function (e) {
     var s = e || window.e
@@ -44,9 +36,13 @@ export default Ember.Component.extend({
     }
   }),
 
+  isCapsAndReveal: Ember.computed('isCapsOn', 'isRevealerVisible', 'revealable', function () {
+    return this.get('revealable') && this.get('isCapsOn') && this.get('isRevealerVisible')
+  }),
+
   actions: {
     onInput (args) {
-      this.set('showRevealer', args.value.length > 0)
+      this.set('isRevealerVisible', args.value.length > 0)
       if (_.isFunction(this.get('on-input'))) {
         this.get('on-input')(args)
       }
@@ -54,6 +50,7 @@ export default Ember.Component.extend({
     toggleReveal () {
       this.toggleProperty('revealed')
       this.set('type', this.get('revealed') ? 'text' : 'password')
+      this.set('revealIcon', this.get('revealed') ? 'frost/hide' : 'frost/show')
     }
   }
 })

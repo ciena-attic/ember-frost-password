@@ -11,7 +11,7 @@ module.exports = {
   afterInstall: function () {
     return this.addAddonsToProject({
       packages: [
-        {name: 'ember-frost-theme', target: '^1.3.1'},
+        {name: 'ember-frost-theme', target: '^1.4.0'},
         {name: 'ember-frost-text', target: '^1.4.2'}
       ]
     })
