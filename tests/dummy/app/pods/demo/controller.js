@@ -15,7 +15,6 @@ export default Ember.Controller.extend({
 
     toggleError () {
       this.toggleProperty('error')
-      this.toggleProperty('errored')
     }
   }
 })

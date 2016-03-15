@@ -14,9 +14,11 @@
 
 <div style="padding: 10px 20px;">
   {{frost-password id="errored" classNameBindings="error"}}
-  {{#frost-button on-click=(action "toggleError") class="text small secondary"}}
+  <div>
+    {{#frost-button on-click=(action "toggleError") class="text small secondary"}}
       Toggle error
-  {{/frost-button}}
+    {{/frost-button}}
+  </div>
 </div>
 
 <div class='dummy-header'>Attributes - e.g. Disabled</div>
@@ -28,5 +30,5 @@
 <div class='dummy-header'>Revealable</div>
 
 <div style="padding: 10px 20px;">
-  {{frost-password id="revealable" value='x' revealable=true}}
+  {{frost-password id="revealable" revealable=true}}
 </div>
