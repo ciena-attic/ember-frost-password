@@ -5,13 +5,17 @@
   flex-direction: column;
   justify-content: center;
 
+  .frost-text > input {
+    padding-right: 36px;
+  }
+
   &.revealable {
-    .frost-text .close {
-      left: -40px;
+
+    .frost-text .clear {
+      margin-left: -40px;
     }
 
     .frost-button {
-      margin-left: -30px;
       width: 15px;
       height: 15px;
       padding: 0;
@@ -27,13 +31,12 @@
   .warning {
     font-size: 10px;
     color: $frost-color-blue-1;
+    margin-left: 5px;
   }
 
-  .shifted-warning {
+  .reveal-warning {
     font-size: 10px;
     color: $frost-color-blue-1;
-    margin-left: 15px;
+    margin-left: 10px;
   }
-
-
 }
