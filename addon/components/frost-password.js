@@ -4,36 +4,53 @@ import _ from 'lodash'
 
 export default Ember.Component.extend({
   layout: layout,
-  type: 'password',
   classNames: ['frost-password'],
+  classNameBindings: ['revealable'],
+  isCapsOn: false,
+  isRevealerVisible: false,
   revealable: false,
-  showRevealer: false,
   revealed: false,
-  timeoutInterval: 3000,
-  timeout: undefined,
-  prompt: Ember.computed('revealed', function () {
-    return this.get('revealed') ? 'hide' : 'show'
+  revealIcon: 'frost/show',
+  type: 'password',
+
+  focusOut: Ember.on('focusOut', function () {
+    this.set('isCapsOn', false)
   }),
+  keyDown: Ember.on('keyDown', function (e) {
+    var s = e || window.e
+    if (this.get('isCapsOn') === false && (s.which === 20 || s.keyCode === 20)) {
+      this.set('isCapsOn', true)
+    }
+  }),
+  keyUp: Ember.on('keyUp', function (e) {
+    var s = e || window.e
+    if (this.get('isCapsOn') === true && (s.which === 20 || s.keyCode === 20)) {
+      this.set('isCapsOn', false)
+    }
+  }),
+  keyPressed: Ember.on('keyPress', function (e) {
+    var s = String.fromCharCode(e.which || e.keyCode)   // IE support
+    if ((s.toUpperCase() === s && s.toLowerCase() !== s && !e.shiftKey) ||
+      (s.toUpperCase() !== s && s.toLowerCase() === s && e.shiftKey)) { // caps is on
+      this.set('isCapsOn', true)
+    }
+  }),
+
+  isCapsAndReveal: Ember.computed('isCapsOn', 'isRevealerVisible', 'revealable', function () {
+    return this.get('revealable') && this.get('isCapsOn') && this.get('isRevealerVisible')
+  }),
+
   actions: {
-    toggleReveal () {
-      this.toggleProperty('revealed')
-      this.set('type', this.get('revealed') ? 'text' : 'password')
-      if (this.get('revealed')) {
-        this.startTimeout()
-      } else {
-        Ember.run.cancel(this.timeout)
-      }
-    },
     onInput (args) {
-      this.set('showRevealer', args.value.length > 0)
+      this.set('isRevealerVisible', args.value.length > 0)
       if (_.isFunction(this.get('on-input'))) {
         this.get('on-input')(args)
       }
+    },
+    toggleReveal () {
+      this.toggleProperty('revealed')
+      this.set('type', this.get('revealed') ? 'text' : 'password')
+      this.set('revealIcon', this.get('revealed') ? 'frost/hide' : 'frost/show')
     }
-  },
-  startTimeout () {
-    this.timeout = Ember.run.later(() => {
-      this.actions.toggleReveal.bind(this)()
-    }, this.timeoutInterval)
   }
 })
