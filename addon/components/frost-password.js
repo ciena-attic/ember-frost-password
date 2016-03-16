@@ -14,7 +14,7 @@ export default Ember.Component.extend({
   type: 'password',
 
   focusOut: Ember.on('focusOut', function () {
-    this.set('isCapsOn', false)
+//    this.set('isCapsOn', false)
   }),
   keyDown: Ember.on('keyDown', function (e) {
     var s = e || window.e
