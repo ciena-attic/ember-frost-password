@@ -14,7 +14,7 @@ the drop-down select widget to rule them all
  * [Installation](#installation)
  * [API](#api)
  * [Examples](#examples)
- * [Contributing](#contributing)
+ * [Development](#development)
 
 ## Installation
 ```
