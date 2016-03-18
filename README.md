@@ -9,12 +9,11 @@
 
 # ember-frost-password <br /> [![Travis][ci-img]][ci-url] [![Coveralls][cov-img]][cov-url] [![NPM][npm-img]][npm-url]
 
-# ember-frost-password
 the drop-down select widget to rule them all
 
- * [Installation](#Installation)
- * [API](#API)
- * [Examples](#Examples)
+ * [Installation](#installation)
+ * [API](#api)
+ * [Examples](#examples)
  * [Development](#development)
 
 ## Installation
