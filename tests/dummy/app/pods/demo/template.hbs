@@ -1,19 +1,27 @@
 <div class='dummy-header'>Basic</div>
 
 <div style="padding: 10px 20px;">
-  {{frost-password id="basic"}}
+  {{frost-password
+    id="basic"
+  }}
 </div>
 
 <div class='dummy-header'>Action</div>
 
 <div style="padding: 10px 20px;">
-  {{frost-password id="action" onInput=(action "text")}}
+  {{frost-password
+    id="action"
+    onInput=(action "text")
+  }}
 </div>
 
 <div class='dummy-header'>Errored</div>
 
 <div style="padding: 10px 20px;">
-  {{frost-password id="errored" classNameBindings="error"}}
+  {{frost-password
+    id="errored"
+    classNameBindings="error"
+  }}
   <div>
     {{#frost-button on-click=(action "toggleError") class="text small secondary"}}
       Toggle error
@@ -24,11 +32,17 @@
 <div class='dummy-header'>Attributes - e.g. Disabled</div>
 
 <div style="padding: 10px 20px;">
-  {{frost-password id="disabled" disabled=true}}
+  {{frost-password
+    id="disabled"
+    disabled=true
+  }}
 </div>
 
 <div class='dummy-header'>Revealable</div>
 
 <div style="padding: 10px 20px;">
-  {{frost-password id="revealable" revealable=true}}
+  {{frost-password
+    id="revealable"
+    revealable=true
+  }}
 </div>
