@@ -43,8 +43,8 @@ export default Ember.Component.extend({
   actions: {
     onInput (args) {
       this.set('isRevealerVisible', args.value.length > 0)
-      if (_.isFunction(this.get('on-input'))) {
-        this.get('on-input')(args)
+      if (_.isFunction(this.get('onInput'))) {
+        this.get('onInput')(args)
       }
     },
     toggleReveal () {
