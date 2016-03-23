@@ -1,34 +1,100 @@
-<div class='dummy-header'>Basic</div>
+<div class="section">
+    <div class="title">frost-password</div>
+    <div class="example">
+        <div class="title">Basic</div>
+        <div class="snippet">
+          {{format-markdown "```handlebars
+{{frost-password
+  id='basic'
+}}
+```"
+          }}
+        </div>
+        <div class="demo">
+          {{frost-password
+          id="basic"
+          }}
+        </div>
+    </div>
 
-<div style="padding: 10px 20px;">
-  {{frost-password id="basic"}}
-</div>
+    <div class="example">
+        <div class="title">Action</div>
+        <div class="snippet">
+          {{format-markdown "```handlebars
+{{frost-password
+  id='action'
+  onInput=(action 'text')
+}}
+```"
+          }}
+        </div>
+        <div class="demo">
+          {{frost-password
+          id='action'
+          onInput=(action 'text')
+          }}
+        </div>
+    </div>
 
-<div class='dummy-header'>Action</div>
+    <div class="example">
+        <div class="title">Errored</div>
+        <div class="snippet">
+          {{format-markdown "```handlebars
+{{frost-password
+  id='errored'
+  classNameBindings='error'
+}}
+```"
+          }}
+        </div>
+        <div class="demo">
+          {{frost-password
+          id="errored"
+          classNameBindings="error"
+          }}
+            <div>
+              {{#frost-button on-click=(action "toggleError") class="text small secondary"}}
+                  Toggle error
+              {{/frost-button}}
+            </div>
+        </div>
+    </div>
 
-<div style="padding: 10px 20px;">
-  {{frost-password id="action" on-input=(action "text")}}
-</div>
+    <div class="example">
+        <div class="title">Attributes - e.g. Disabled</div>
+        <div class="snippet">
+          {{format-markdown "```handlebars
+{{frost-password
+  id='disabled'
+  disabled=true
+}}
+```"
+          }}
+        </div>
+        <div class="demo">
+          {{frost-password
+          id='disabled'
+          disabled=true
+          }}
+        </div>
+    </div>
 
-<div class='dummy-header'>Errored</div>
-
-<div style="padding: 10px 20px;">
-  {{frost-password id="errored" classNameBindings="error"}}
-  <div>
-    {{#frost-button on-click=(action "toggleError") class="text small secondary"}}
-      Toggle error
-    {{/frost-button}}
-  </div>
-</div>
-
-<div class='dummy-header'>Attributes - e.g. Disabled</div>
-
-<div style="padding: 10px 20px;">
-  {{frost-password id="disabled" disabled=true}}
-</div>
-
-<div class='dummy-header'>Revealable</div>
-
-<div style="padding: 10px 20px;">
-  {{frost-password id="revealable" revealable=true}}
+    <div class="example">
+        <div class="title">Revealable</div>
+        <div class="snippet">
+          {{format-markdown "```handlebars
+{{frost-password
+  id='revealable'
+  revealable=true
+}}
+```"
+          }}
+        </div>
+        <div class="demo">
+          {{frost-password
+          id='revealable'
+          revealable=true
+          }}
+        </div>
+    </div>
 </div>
